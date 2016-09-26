@@ -119,7 +119,7 @@ def loc_is_module(loc, expected):
     return (lmod != None) and (lmod == expected)
 
 def file_module_name(filename):
-    (root, ext) = os.path.splitext(re.split('/', filename)[-1])
+    (root, ext) = os.path.splitext(os.path.basename(re.split('/', filename)[-1]))
     if ext in ERLANG_EXTENSIONS:
         return root
     else:

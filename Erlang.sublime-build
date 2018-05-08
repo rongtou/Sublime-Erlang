@@ -1,5 +1,8 @@
 {
-	"cmd": ["erlc", "$file"],
-	"file_regex":"^([^:]+):(?:([0-9]+):)?(?:([0-9]+):)? (.*)",
+	// "cmd": ["erlc", "$file"],
+    "cmd": ["xerlc.exe", "build", "-Dlocal_server", "$file"],
+    // "cmd": ["etk", "build", "$file", "cd publish", "spub mods:{{range .}}{{.}},{{end}} master/f1_local_S1_172_22_254_195.json update"],
+    // "file_regex":"^([^:]+):(?:([0-9]+):)?(?:([0-9]+):)? (.*)",
+	"file_regex":"(.+):([0-9]+):() (.*)",
 	"selector": "source.erlang, source.yecc, source.leex"
 }

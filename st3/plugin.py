@@ -136,10 +136,9 @@ def lookupsym(window, symbol):
 
 def allsamefile(locs):
     f0, _, _ = locs[0]
-    f0 = f0.lower()
     for loc in locs[1:]:
         f, _, _ = loc
-        if f.lower() != f0:
+        if f != f0:
             return False
     return True
 

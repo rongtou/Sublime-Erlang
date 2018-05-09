@@ -129,16 +129,17 @@ def lookupsym(window, symbol):
     if sublime.version() < '3069':
         return Default.symbol.GotoDefinition(window).lookup_symbol(symbol)
     else:
-        matches = sublime.active_window().lookup_symbol_in_index(symbol)
+        matches = Default.symbol.lookup_symbol(window, symbol)
         if matches is None:
             matches = []
         return matches
 
 def allsamefile(locs):
     f0, _, _ = locs[0]
+    f0 = f0.lower()
     for loc in locs[1:]:
         f, _, _ = loc
-        if f != f0:
+        if f.lower() != f0:
             return False
     return True
 

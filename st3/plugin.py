@@ -129,7 +129,7 @@ def lookupsym(window, symbol):
     if sublime.version() < '3069':
         return Default.symbol.GotoDefinition(window).lookup_symbol(symbol)
     else:
-        matches = Default.symbol.lookup_symbol(window, symbol)
+        matches = sublime.active_window().lookup_symbol_in_index(symbol)
         if matches is None:
             matches = []
         return matches

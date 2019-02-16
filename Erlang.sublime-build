@@ -1,6 +1,6 @@
 {
 	// "cmd": ["erlc", "$file"],
-    "cmd": ["e:\\Work\\xw01\\tools\\xerlc\\xerlc.exe", "build", "$file", "-DLOCAL"],
+    "cmd": ["e:\\Work\\xw01\\tools\\xerlc\\xerlc.exe", "build", "$file", "-DDEBUG"],
     // "file_regex":"^([^:]+):(?:([0-9]+):)?(?:([0-9]+):)? (.*)",
 	"file_regex":"(.+):([0-9]+):() (.*)",
 	"selector": "source.erlang, source.yecc, source.leex"
